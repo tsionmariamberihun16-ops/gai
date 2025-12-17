@@ -1,0 +1,7 @@
+{
+  "name": "GNEXUS AI",
+  "description": "The GNEXUS AI Platform. An advanced MoE orchestration platform with integrated voice, translation, and workspace tools.",
+  "requestFramePermissions": [
+    "microphone"
+  ]
+}

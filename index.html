@@ -3,9 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>GNEXUS AI</title>
+    <title>GNEXUS | Zenith Ultra Platform</title>
     <script>
-      // Global Polyfills for Node.js environments (required by some libraries)
       window.process = { env: { NODE_ENV: 'development' } };
       window.global = window;
       window.Buffer = window.Buffer || [];
@@ -18,56 +17,97 @@
         darkMode: 'class',
         theme: {
           extend: {
+            colors: {
+              zenith: {
+                bg: '#020617',
+                surface: '#0f172a',
+                border: '#1e293b',
+                accent: '#38bdf8',
+                highlight: '#0ea5e9',
+              }
+            },
             fontFamily: {
-              sans: ['Inter', 'sans-serif'],
+              sans: ['Inter', 'system-ui', 'sans-serif'],
               mono: ['JetBrains Mono', 'monospace'],
+            },
+            animation: {
+              'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+              'shimmer': 'shimmer 2s infinite',
+            },
+            keyframes: {
+              shimmer: {
+                '0%': { backgroundPosition: '-200% 0' },
+                '100%': { backgroundPosition: '200% 0' },
+              }
             }
           }
         }
       }
     </script>
-    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;700&family=Inter:wght@300;400;600;900&display=swap" rel="stylesheet">
     <style>
       body {
         font-family: 'Inter', sans-serif;
-        /* Background and color handled by App.tsx classes */
-        transition: background-color 0.5s, color 0.5s;
+        background-color: #020617;
+        color: #f8fafc;
+        overflow: hidden;
       }
-      .font-mono {
-        font-family: 'JetBrains Mono', monospace;
+      .glass {
+        background: rgba(15, 23, 42, 0.7);
+        backdrop-filter: blur(12px);
+        border: 1px solid rgba(255, 255, 255, 0.05);
       }
-      /* Custom Scrollbar - Neutral/Adaptive */
+      .glass-card {
+        background: rgba(30, 41, 59, 0.5);
+        backdrop-filter: blur(8px);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+      }
       ::-webkit-scrollbar {
-        width: 8px;
-        height: 8px;
+        width: 4px;
+        height: 4px;
       }
       ::-webkit-scrollbar-track {
         background: transparent; 
       }
       ::-webkit-scrollbar-thumb {
-        background: #94a3b8; /* Slate-400 */
-        border-radius: 4px;
+        background: rgba(56, 189, 248, 0.2);
+        border-radius: 10px;
       }
       ::-webkit-scrollbar-thumb:hover {
-        background: #64748b; /* Slate-500 */
+        background: rgba(56, 189, 248, 0.5);
+      }
+      .monaco-editor .margin, .monaco-editor, .monaco-editor-background, .monaco-editor .inputarea.ime-input {
+        background-color: transparent !important;
+      }
+      @keyframes loading-progress {
+        0% { transform: translateX(-100%); }
+        100% { transform: translateX(100%); }
+      }
+      .animate-loading {
+        animation: loading-progress 1.5s infinite ease-in-out;
       }
     </style>
   <script type="importmap">
 {
   "imports": {
-    "react-dom/": "https://esm.sh/react-dom@^19.2.3/",
-    "lucide-react": "https://esm.sh/lucide-react@^0.561.0",
-    "recharts": "https://esm.sh/recharts@^3.6.0",
-    "react/": "https://esm.sh/react@^19.2.3/",
-    "react": "https://esm.sh/react@^19.2.3",
+    "react": "https://esm.sh/react@19.0.0",
+    "react-dom": "https://esm.sh/react-dom@19.0.0",
+    "react-dom/client": "https://esm.sh/react-dom@19.0.0/client",
+    "lucide-react": "https://esm.sh/lucide-react@0.561.0",
     "jszip": "https://esm.sh/jszip@3.10.1",
+    "lz-string": "https://esm.sh/lz-string@1.5.0",
+    "@stackblitz/sdk": "https://esm.sh/@stackblitz/sdk@1.9.0",
+    "@monaco-editor/react": "https://esm.sh/@monaco-editor/react@4.6.0?external=react,react-dom",
+    "xterm": "https://esm.sh/xterm@5.3.0",
+    "xterm-addon-fit": "https://esm.sh/xterm-addon-fit@0.8.0",
+    "@excalidraw/excalidraw": "https://esm.sh/@excalidraw/excalidraw@0.17.6?external=react,react-dom",
     "react-syntax-highlighter": "https://esm.sh/react-syntax-highlighter@15.5.0?external=react,react-dom",
     "react-syntax-highlighter/dist/esm/styles/prism": "https://esm.sh/react-syntax-highlighter@15.5.0/dist/esm/styles/prism?external=react,react-dom",
-    "react-syntax-highlighter/": "https://esm.sh/react-syntax-highlighter@^16.1.0/",
-    "@stackblitz/sdk": "https://esm.sh/@stackblitz/sdk@1.9.0"
+    "@google/genai": "https://esm.sh/@google/genai@0.12.0"
   }
 }
 </script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/xterm@5.3.0/css/xterm.css" />
 </head>
   <body>
     <div id="root"></div>

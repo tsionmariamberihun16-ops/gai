@@ -4,73 +4,80 @@ import { BrainCircuit, Code2, Eye, Globe } from 'lucide-react';
 export const SAIC_MODELS: AIModel[] = [
   // Adaptive Reasoning
   {
-    id: 'hermes-3-405b',
-    name: 'Hermes 3 405B',
+    id: 'google/gemini-2.0-flash-exp:free',
+    name: 'Gemini 2.0 Flash',
     category: ModelCategory.ADAPTIVE_REASONING,
-    description: 'Advanced Steerability & Strategic Planning',
-    specs: '405B Params'
+    description: 'Ultra-fast multimodal model with 1M context window.',
+    specs: 'OpenRouter Free'
   },
   {
-    id: 'gpt-oss-120b',
-    name: 'gpt-oss-120b',
+    id: 'google/gemini-2.0-flash-thinking-exp:free',
+    name: 'Gemini 2.0 Thinking',
     category: ModelCategory.ADAPTIVE_REASONING,
-    description: 'High-Reasoning, Configurable CoT',
-    specs: '120B Params'
+    description: 'Experimental reasoning model with internal thought chain.',
+    specs: 'OpenRouter Free'
   },
   {
-    id: 'kimi-k2',
-    name: 'Kimi K2 0711',
+    id: 'deepseek/deepseek-r1:free',
+    name: 'DeepSeek R1',
     category: ModelCategory.ADAPTIVE_REASONING,
-    description: '1T Parameter MoE, Advanced Tool Use',
-    specs: '1T MoE'
-  },
-  {
-    id: 'gemini-2-flash',
-    name: 'Gemini 2.0 Flash Exp',
-    category: ModelCategory.ADAPTIVE_REASONING,
-    description: 'Fastest TTFT, 1.05M Context',
-    specs: '1.05M Context'
+    description: 'High-tier reasoning comparable to o1-preview for logic tasks.',
+    specs: 'OpenRouter Free'
   },
   
   // Code Autonomy
   {
-    id: 'devstral-2',
-    name: 'Devstral 2 2512',
+    id: 'qwen/qwen-2.5-coder-32b-instruct:free',
+    name: 'Qwen 2.5 Coder',
     category: ModelCategory.CODE_AUTONOMY,
-    description: 'Codebase Orchestration & Refactoring',
-    specs: '123B Params'
+    description: 'State-of-the-art open-source coding specialist.',
+    specs: 'OpenRouter Free'
   },
   {
-    id: 'kat-coder-pro',
-    name: 'KAT-Coder-Pro V1',
+    id: 'deepseek/deepseek-chat:free',
+    name: 'DeepSeek V3',
     category: ModelCategory.CODE_AUTONOMY,
-    description: 'SWE-Bench Mastery',
-    specs: 'Specialized'
-  },
-  
-  // Multimodal
-  {
-    id: 'nemotron-nano-2',
-    name: 'Nemotron Nano 2 VL',
-    category: ModelCategory.MULTIMODAL,
-    description: 'Video/Document Intelligence, OCRBench v2',
-    specs: 'Hybrid Mamba'
-  },
-  {
-    id: 'riverflow-v2',
-    name: 'Riverflow V2',
-    category: ModelCategory.MULTIMODAL,
-    description: 'Unified Text-to-Image Generation',
-    specs: 'Generative'
+    description: 'Powerful general-purpose chat and debugging engine.',
+    specs: 'OpenRouter Free'
   },
 
-  // Global
+  // Global Intelligence
   {
-    id: 'llama-3-3-70b',
+    id: 'meta-llama/llama-3.3-70b-instruct:free',
     name: 'Llama 3.3 70B',
     category: ModelCategory.GLOBAL_INTELLIGENCE,
-    description: 'Multilingual Dialogue Optimization',
-    specs: '70B Instruct'
+    description: 'Metas flagship open-weights model for complex instructions.',
+    specs: 'OpenRouter Free'
+  },
+  {
+    id: 'mistralai/mistral-7b-instruct:free',
+    name: 'Mistral 7B v0.3',
+    category: ModelCategory.GLOBAL_INTELLIGENCE,
+    description: 'Efficient, high-performance small language model.',
+    specs: 'OpenRouter Free'
+  },
+  {
+    id: 'microsoft/phi-3-medium-128k-instruct:free',
+    name: 'Phi-3 Medium',
+    category: ModelCategory.GLOBAL_INTELLIGENCE,
+    description: 'Microsofts 128k context efficient powerhouse.',
+    specs: 'OpenRouter Free'
+  },
+
+  // Multimodal & Community
+  {
+    id: 'huggingfaceh4/zephyr-7b-beta:free',
+    name: 'Zephyr 7B Beta',
+    category: ModelCategory.MULTIMODAL,
+    description: 'Highly fine-tuned community model for chat and follow-through.',
+    specs: 'OpenRouter Free'
+  },
+  {
+    id: 'openchat/openchat-7b:free',
+    name: 'OpenChat 3.5',
+    category: ModelCategory.MULTIMODAL,
+    description: 'Exceptional reasoning capabilities for its size.',
+    specs: 'OpenRouter Free'
   }
 ];
 
